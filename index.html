@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>DreamCode | Decode Your Dreams, Transform Your Life – Esther Yakubu</title>
+  <!-- Google Fonts + Font Awesome -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background: radial-gradient(circle at 10% 20%, #0B0C10, #010101);
+      color: #eef2ff;
+      line-height: 1.5;
+      scroll-behavior: smooth;
+    }
+
+    /* premium orange glow variables */
+    :root {
+      --orange-primary: #ff7b2c;
+      --orange-deep: #e35f1e;
+      --orange-glow: rgba(255, 123, 44, 0.6);
+      --orange-soft: rgba(255, 123, 44, 0.2);
+      --card-bg: rgba(18, 20, 27, 0.85);
+      --border-light: rgba(255, 123, 44, 0.25);
+      --glass-border: 1px solid rgba(255, 123, 44, 0.3);
+    }
+
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* glowing orange accents */
+    .glow-text {
+      text-shadow: 0 0 8px rgba(255, 123, 44, 0.7), 0 0 2px var(--orange-primary);
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: linear-gradient(135deg, #ff7b2c, #e35f1e);
+      border: none;
+      padding: 14px 32px;
+      border-radius: 60px;
+      font-weight: 700;
+      font-size: 1rem;
+      font-family: 'Montserrat', sans-serif;
+      color: #0a0c12;
+      letter-spacing: 0.5px;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      box-shadow: 0 4px 15px rgba(255, 123, 44, 0.4);
+      text-decoration: none;
+    }
+
+    .btn-primary i {
+      font-size: 1.1rem;
+      color: #0a0c12;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 28px rgba(255, 123, 44, 0.6);
+      background: linear-gradient(135deg, #ff8c42, #f06a22);
+      text-decoration: none;
+      color: #000;
+    }
+
+    .btn-outline {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: transparent;
+      border: 2px solid var(--orange-primary);
+      padding: 12px 28px;
+      border-radius: 60px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      color: #ffb07c;
+      transition: all 0.25s;
+      text-decoration: none;
+    }
+
+    .btn-outline:hover {
+      background: var(--orange-primary);
+      color: #0a0c12;
+      border-color: var(--orange-primary);
+      box-shadow: 0 0 12px var(--orange-glow);
+    }
+
+    section {
+      padding: 80px 0;
+      border-bottom: 1px solid rgba(255, 123, 44, 0.15);
+    }
+
+    .section-title {
+      font-size: 2.4rem;
+      font-weight: 800;
+      margin-bottom: 16px;
+      background: linear-gradient(120deg, #fff, #ffb47b);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+      letter-spacing: -0.5px;
+    }
+
+    .section-sub {
+      font-size: 1.1rem;
+      color: #b9c3db;
+      max-width: 700px;
+      margin-bottom: 48px;
+    }
+
+    /* hero */
+    .hero {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: center;
+      padding: 40px 0 20px;
+    }
+
+    .hero-content h1 {
+      font-size: 3.2rem;
+      font-weight: 800;
+      line-height: 1.2;
+      margin-bottom: 20px;
+    }
+
+    .hero-content h1 span {
+      color: var(--orange-primary);
+      text-shadow: 0 0 6px var(--orange-glow);
+    }
+
+    .hero-badge {
+      background: var(--orange-soft);
+      backdrop-filter: blur(4px);
+      display: inline-block;
+      padding: 6px 14px;
+      border-radius: 40px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: #ffaa66;
+      border: 1px solid rgba(255, 123, 44, 0.5);
+      margin-bottom: 20px;
+    }
+
+    .price-block {
+      display: flex;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin: 28px 0 24px;
+    }
+
+    .current-price {
+      font-size: 2.8rem;
+      font-weight: 800;
+      color: #ff9142;
+    }
+
+    .old-price {
+      font-size: 1.4rem;
+      text-decoration: line-through;
+      color: #8f9bb3;
+    }
+
+    .discount-tag {
+      background: rgba(255, 90, 0, 0.2);
+      padding: 5px 12px;
+      border-radius: 60px;
+      font-weight: 600;
+      font-size: 0.85rem;
+      border-left: 3px solid #ff7b2c;
+    }
+
+    /* mock book cover (premium design) */
+    .book-mock {
+      background: linear-gradient(145deg, #1a1c26, #0f111a);
+      border-radius: 28px;
+      box-shadow: 0 25px 40px -12px rgba(0, 0, 0, 0.7), 0 0 0 2px rgba(255, 123, 44, 0.3), 0 0 0 6px rgba(0, 0, 0, 0.3);
+      padding: 28px 24px 32px;
+      text-align: center;
+      transition: transform 0.3s;
+      backdrop-filter: blur(4px);
+    }
+
+    .book-mock:hover {
+      transform: scale(1.01);
+      box-shadow: 0 30px 45px -12px black, 0 0 0 3px var(--orange-primary);
+    }
+
+    .book-icon {
+      font-size: 3.2rem;
+      color: #ff9142;
+      margin-bottom: 12px;
+    }
+
+    .mock-title {
+      font-size: 1.9rem;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      line-height: 1.2;
+      margin: 15px 0 8px;
+    }
+
+    .mock-author {
+      color: #ffb07c;
+      font-weight: 500;
+      border-top: 1px dashed rgba(255, 123, 44, 0.4);
+      display: inline-block;
+      padding-top: 10px;
+      margin-top: 12px;
+    }
+
+    /* features grid for key concepts */
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+      gap: 32px;
+      margin-top: 20px;
+    }
+
+    .feature-card {
+      background: var(--card-bg);
+      backdrop-filter: blur(8px);
+      border-radius: 28px;
+      padding: 32px 24px;
+      transition: all 0.3s;
+      border: 1px solid var(--border-light);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    .feature-card:hover {
+      border-color: var(--orange-primary);
+      box-shadow: 0 10px 28px rgba(255, 123, 44, 0.2), 0 0 12px rgba(255, 123, 44, 0.3);
+      transform: translateY(-5px);
+    }
+
+    .feature-icon {
+      font-size: 2.4rem;
+      color: var(--orange-primary);
+      margin-bottom: 20px;
+    }
+
+    .feature-card h3 {
+      font-size: 1.5rem;
+      margin-bottom: 12px;
+      font-weight: 700;
+    }
+
+    /* concept cards (for deeper teachings) */
+    .concept-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 28px;
+      margin: 40px 0 20px;
+    }
+    .concept-item {
+      background: rgba(10, 12, 22, 0.7);
+      border-radius: 24px;
+      padding: 24px 20px;
+      border-left: 4px solid #ff7b2c;
+      transition: 0.2s;
+    }
+    .concept-item h4 {
+      font-size: 1.3rem;
+      margin-bottom: 10px;
+      color: #ffb47b;
+    }
+
+    /* author section */
+    .author-wrap {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+      align-items: center;
+      background: rgba(10, 12, 20, 0.6);
+      border-radius: 48px;
+      padding: 36px 32px;
+      border: 1px solid rgba(255, 123, 44, 0.3);
+    }
+
+    .author-avatar {
+      background: linear-gradient(135deg, #ff7b2c, #b1420a);
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 4rem;
+      font-weight: bold;
+      color: #1e1e2a;
+      box-shadow: 0 0 25px rgba(255, 123, 44, 0.7);
+    }
+
+    .author-info h3 {
+      font-size: 2.5rem;
+      font-weight: 700;
+    }
+
+    /* testimonials */
+    .testimonial-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+    }
+
+    .testi-card {
+      background: rgba(20, 22, 32, 0.7);
+      backdrop-filter: blur(5px);
+      border-radius: 28px;
+      padding: 28px;
+      border: 1px solid rgba(255, 123, 44, 0.25);
+      transition: 0.2s;
+    }
+
+    .testi-card i.fa-quote-left {
+      color: #ff7b2c;
+      opacity: 0.6;
+      font-size: 1.6rem;
+      margin-bottom: 12px;
+      display: inline-block;
+    }
+
+    .testi-text {
+      font-style: italic;
+      margin: 12px 0 18px;
+      line-height: 1.5;
+    }
+
+    .stars {
+      color: #ffaa33;
+      letter-spacing: 3px;
+      margin-bottom: 10px;
+    }
+
+    /* cta final */
+    .final-cta {
+      text-align: center;
+      background: linear-gradient(120deg, rgba(255, 123, 44, 0.12), rgba(0, 0, 0, 0.6));
+      border-radius: 64px;
+      padding: 56px 32px;
+      border: 1px solid rgba(255, 123, 44, 0.5);
+    }
+
+    /* footer */
+    footer {
+      text-align: center;
+      padding: 40px 0 30px;
+      font-size: 0.85rem;
+      color: #9aa3bf;
+    }
+
+    /* responsive base */
+    @media (max-width: 900px) {
+      .hero {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 32px;
+      }
+      .hero-content h1 {
+        font-size: 2.8rem;
+      }
+      .price-block {
+        justify-content: center;
+      }
+      .section-title {
+        font-size: 2rem;
+      }
+      .author-wrap {
+        flex-direction: column;
+        text-align: center;
+      }
+      section {
+        padding: 60px 0;
+      }
+      .btn-primary, .btn-outline {
+        padding: 12px 24px;
+      }
+    }
+
+    @media (max-width: 540px) {
+      .container {
+        padding: 0 20px;
+      }
+      .hero-content h1 {
+        font-size: 2.6rem;
+      }
+      .current-price {
+        font-size: 2.2rem;
+      }
+      .mock-title {
+        font-size: 1.4rem;
+      }
+      .section-title {
+        font-size: 1.8rem;
+      }
+    }
+
+    /* EXTRA RESPONSIVE TOUCH for max-width: 400px */
+    @media (max-width: 400px) {
+      .container {
+        padding: 0 16px;
+      }
+      .hero {
+        padding: 20px 0 10px;
+      }
+      .hero-content h1 {
+        font-size: 2.5rem;
+      }
+      .hero-badge {
+        font-size: 0.7rem;
+        padding: 4px 12px;
+      }
+      .btn-primary, .btn-outline {
+        width: 100%;
+        justify-content: center;
+        padding: 12px 18px;
+        font-size: 0.9rem;
+      }
+      .price-block {
+        gap: 8px;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+      .current-price {
+        font-size: 1.9rem;
+      }
+      .old-price {
+        font-size: 1.1rem;
+      }
+      .section-title {
+        font-size: 1.6rem;
+      }
+      .section-sub {
+        font-size: 0.95rem;
+        margin-bottom: 30px;
+      }
+      .feature-card, .concept-item {
+        padding: 20px 16px;
+      }
+      .feature-card h3, .concept-item h4 {
+        font-size: 1.2rem;
+      }
+      .author-avatar {
+        width: 100px;
+        height: 100px;
+        font-size: 2.5rem;
+      }
+      .author-info h3 {
+        font-size: 2rem;
+      }
+      .final-cta {
+        padding: 36px 20px;
+      }
+      .final-cta h2 {
+        font-size: 1.6rem;
+      }
+      .book-mock {
+        padding: 20px 16px;
+      }
+      .mock-title {
+        font-size: 1.3rem;
+      }
+      .testi-card {
+        padding: 20px;
+      }
+    }
+
+    .glow-border {
+      transition: all 0.3s;
+    }
+    .btn-primary:active {
+      transform: scale(0.97);
+    }
+    ::selection {
+      background: #ff7b2c;
+      color: #0a0c12;
+    }
+    .author-img img{
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 20px;
+      border: 3px solid #ff7b2c;
+    }
+    .author-img img:hover{
+      box-shadow: 0 12px 28px rgba(255, 123, 44, 0.9);
+      background: linear-gradient(135deg, #ff8c42, #f06a22);    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <!-- Hero section -->
+  <section style="padding-top: 60px;">
+    <div class="hero">
+      <div class="hero-content">
+        <div class="hero-badge">
+          <i class="fas fa-moon"></i> DREAM INTERPRETATION MASTERCLASS
+        </div>
+        <h1>
+          Dream<span>Code</span><br>
+          <span style="font-size: 0.65em; display: block; color: #f0f3ff;">How to Handle Your Dreams & Change Your Life</span>
+        </h1>
+        <p style="font-size: 1.2rem; margin: 20px 0 16px; opacity: 0.9;">
+          Dreams are messages — they warn, guide, reveal, and predict. Learn to decode symbols, 
+          understand timing cycles, and turn dream insights into real-life transformation.
+        </p>
+        <div class="price-block">
+          <span class="current-price">$1.70</span>
+          <span class="old-price">$3.50</span>
+          <span class="discount-tag"><i class="fas fa-bolt"></i> 50% OFF • Launch Special</span>
+        </div>
+        <div style="display: flex; flex-wrap: wrap; gap: 18px; margin-top: 10px;">
+          <a href="https://selar.com/75fz0s4x19" target="_blank" rel="noopener noreferrer" class="btn-primary">
+            <i class="fas fa-book-open"></i> Buy Now – Instant PDF
+          </a>
+          <a href="#key-concepts" class="btn-outline">
+            <i class="fas fa-arrow-down"></i> Explore Core Teachings
+          </a>
+        </div>
+        <div style="margin-top: 28px; display: flex; gap: 20px; flex-wrap: wrap; font-size: 0.85rem;">
+          <span><i class="fas fa-check-circle" style="color:#ff7b2c;"></i> Instant Download</span>
+          <span><i class="fas fa-check-circle" style="color:#ff7b2c;"></i> PDF Format</span>
+          <span><i class="fas fa-check-circle" style="color:#ff7b2c;"></i> Secure checkout</span>
+        </div>
+      </div>
+      <div class="book-mock">
+        <div class="book-icon"><i class="fas fa-moon"></i> <i class="fas fa-crown"></i></div>
+        <div class="mock-title">DREAM<span style="color:#ff7b2c;">CODE</span></div>
+        <div style="font-weight: 400; margin: 8px 0;">How to Handle Your Dreams<br> & Change Your Life</div>
+        <div class="mock-author">Esther Yakubu</div>
+        <div style="margin-top: 20px; font-size: 0.8rem; background: rgba(0,0,0,0.4); border-radius: 40px; padding: 6px 12px; display: inline-block;">
+          <i class="fas fa-download"></i> e-book + dream symbols dictionary
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Key Concepts from the Book (mirror summary) -->
+  <section id="key-concepts">
+    <div style="text-align: center;">
+      <div class="section-title">What You'll Unlock Inside DreamCode</div>
+      <div class="section-sub">Based on timeless wisdom and real-world application — learn to interpret, act, and transform.</div>
+    </div>
+    <div class="concept-grid">
+      <div class="concept-item">
+        <i class="fas fa-comment-dots" style="color:#ff7b2c; font-size: 2rem;"></i>
+        <h4>Dreams Are Messages</h4>
+        <p>Warnings, direction, or revelations — from God, your thoughts, or spiritual realities. Test them with peace & reflection.</p>
+      </div>
+      <div class="concept-item">
+        <i class="fas fa-chart-line" style="color:#ff7b2c; font-size: 2rem;"></i>
+        <h4>Physical Equivalent</h4>
+        <p>When dream events manifest in reality. Good dreams → pursue them. Bad dreams → stop them before they happen.</p>
+      </div>
+      <div class="concept-item">
+        <i class="fas fa-clock" style="color:#ff7b2c; font-size: 2rem;"></i>
+        <h4>Cycles & Timing</h4>
+        <p>Dreams follow seasons (2, 3, 7, 21, 40 years). Act at the right time or miss opportunities. Learn life’s dream calendar.</p>
+      </div>
+      <div class="concept-item">
+        <i class="fas fa-microphone-alt" style="color:#ff7b2c; font-size: 2rem;"></i>
+        <h4>Power of Words</h4>
+        <p>What you speak shapes outcomes. Prayer, meditation, and declarations reverse negative dream patterns.</p>
+      </div>
+      <div class="concept-item">
+        <i class="fas fa-book" style="color:#ff7b2c; font-size: 2rem;"></i>
+        <h4>Dream Symbols Decoded</h4>
+        <p>Animals, nakedness, prisons, snakes, markets, old schools — each symbol holds a key to your life situation.</p>
+      </div>
+      <div class="concept-item">
+        <i class="fas fa-hand-sparkles" style="color:#ff7b2c; font-size: 2rem;"></i>
+        <h4>Spells & Divination</h4>
+        <p>Understand how words and enchantments can affect your journey — and how dreams reveal hidden influences.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Additional feature grid: deeper insight -->
+  <section>
+    <div style="text-align: center;">
+      <div class="section-title">Master the Language of the Night</div>
+      <div class="section-sub">From too many dreams to sequential visions — interpret patterns and prevent problems before they surface.</div>
+    </div>
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon"><i class="fas fa-brain"></i></div>
+        <h3>Too Many or Too Few Dreams?</h3>
+        <p>Learn what dream frequency reveals about spiritual activity, sensitivity, and inner peace. Discover sequential dream series.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon"><i class="fas fa-eye"></i></div>
+        <h3>Dreams & Physical Reality</h3>
+        <p>When danger, babies, or food appear — understand the physical equivalent principle and how to align your actions.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon"><i class="fas fa-dragon"></i></div>
+        <h3>Symbol Dictionary Included</h3>
+        <p>Snakes, courts, rivers, robbery, markets, dry trees — decode hidden meanings and take control of your destiny.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon"><i class="fas fa-chalkboard-user"></i></div>
+        <h3>Gift of Interpretation</h3>
+        <p>Some dreams carry hidden messages and mysteries. Train your intuition to understand instructions and confusion.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Author section (aligned with summary) -->
+  <section>
+    <div class="author-wrap">
+      <div class="author-img">
+        <img src="Esther-Yakubu.png" alt="Esther Yakubu">
+      </div>
+      <div class="author-info">
+        <h3>Esther Yakubu</h3>
+        <p style="font-size: 1.05rem; margin-bottom: 12px;">Dream analyst, spiritual coach & storyteller</p>
+        <p>Esther combines biblical examples (Joseph, Daniel) with African wisdom (Afonja) and modern insight. Her life's work: proving that understanding dreams can prevent problems and unlock success. <strong>DreamCode</strong> is a practical guide to decode symbols, timing, and the power of words.</p>
+        <div style="margin-top: 20px;">
+          <i class="fas fa-feather-alt" style="color:#ff7b2c;"></i> “If you understand dreams, you can shape your outcomes.”
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials (relevant to the book's message) -->
+  <section>
+    <div style="text-align: center;">
+      <div class="section-title">Real Readers, Real Transformations</div>
+      <div class="section-sub">Thousands have applied the “physical equivalent” principle and changed their lives.</div>
+    </div>
+    <div class="testimonial-grid">
+      <div class="testi-card">
+        <i class="fas fa-quote-left"></i>
+        <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+        <p class="testi-text">“I kept dreaming of snakes and felt stuck. DreamCode taught me how to disarm the attack through prayer and awareness — within weeks, my peace returned.”</p>
+        <strong>— Naomi K.</strong>
+      </div>
+      <div class="testi-card">
+        <i class="fas fa-quote-left"></i>
+        <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+        <p class="testi-text">“The cycles and timing chapter blew my mind. I understood why certain opportunities came after 7 years. Now I align my decisions with dream seasons.”</p>
+        <strong>— Samuel D.</strong>
+      </div>
+      <div class="testi-card">
+        <i class="fas fa-quote-left"></i>
+        <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></div>
+        <p class="testi-text">“The symbol dictionary is worth every penny. I finally understand my dreams about old schools and marketplaces. This book is a must-have.”</p>
+        <strong>— Grace O.</strong>
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA with price & selar link -->
+  <section>
+    <div class="final-cta">
+      <i class="fas fa-gem" style="font-size: 2.5rem; color:#ff7b2c; margin-bottom: 20px; display: inline-block;"></i>
+      <h2 style="font-size: 2rem; font-weight: 800;">Decode Your Dreams. Shape Your Future.</h2>
+      <p style="font-size: 1.2rem; max-width: 600px; margin: 18px auto;">Get the complete DreamCode guide with full dream symbol dictionary, physical equivalent framework, and timing secrets. <strong>$1.70</strong> (regular $3.50). Instant PDF.</p>
+      <div class="price-block" style="justify-content: center; margin: 10px 0 20px;">
+        <span class="current-price">$1.70 USD</span>
+        <span class="old-price">$3.50</span>
+        <span class="discount-tag"><i class="fas fa-fire"></i> 50% OFF</span>
+      </div>
+      <a href="https://selar.com/75fz0s4x19" target="_blank" rel="noopener noreferrer" class="btn-primary" style="font-size: 1.2rem; padding: 16px 42px;">
+        <i class="fas fa-cart-shopping"></i> Buy Now on Selar
+      </a>
+      <p style="margin-top: 28px; font-size: 0.85rem;"><i class="fas fa-lock"></i> Secure checkout · Instant Download</p>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 DreamCode by Esther Yakubu — All rights reserved. | <a href="https://selar.com/75fz0s4x19" target="_blank" style="color:#ff9f60; text-decoration: none;">Official Selar Store</a></p>
+    <p style="margin-top: 12px;"><i class="fas fa-dream"></i> “Dreams warn, guide, reveal, and predict — learn to master them.”</p>
+  </footer>
+</div>
+
+<script>
+  (function() {
+    console.log("✨ DreamCode — Decode your dreams, transform your life. Get the book: https://selar.com/75fz0s4x19");
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        const targetId = this.getAttribute('href').substring(1);
+        if (targetId && document.getElementById(targetId)) {
+          e.preventDefault();
+          document.getElementById(targetId).scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+  })();
+</script>
+</body>
+</html>
