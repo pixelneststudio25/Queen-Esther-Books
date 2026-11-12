@@ -1,499 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>Queen Esther Yakubu | Official Bookstore</title>
-  <!-- Google Fonts Nailahladan@50#-->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <!-- Font Awesome 6 (required for all icons) -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  <!-- Premium favicon -->
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%232E1A4A'/%3E%3Ctext x='50' y='68' font-size='58' text-anchor='middle' fill='%23D4AF37' font-family='Arial'%3E📖%3C/text%3E%3C/svg%3E">
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: 'Montserrat', sans-serif;
-      background: #FFFFFF;
-      color: #1E1A2F;
-      scroll-behavior: smooth;
-      overflow-x: hidden;
-    }
-
-    /* color variables */
-    :root {
-      --deep-purple: #2E1A4A;
-      --deep-purple-dark: #1F1035;
-      --gold: #D4AF37;
-      --gold-light: #F3E5AB;
-      --white: #FFFFFF;
-      --light-gray: #F9F7F5;
-      --shadow-sm: 0 12px 30px rgba(0, 0, 0, 0.05);
-      --glow-gold: 0 0 8px rgba(212, 175, 55, 0.5), 0 0 15px rgba(212, 175, 55, 0.3);
-    }
-
-    /* custom scrollbar */
-    ::-webkit-scrollbar {
-      width: 8px;
-    }
-    ::-webkit-scrollbar-track {
-      background: #f1f1f1;
-    }
-    ::-webkit-scrollbar-thumb {
-      background: var(--gold);
-      border-radius: 10px;
-    }
-
-    /* typography */
-    h1, h2, h3, .logo {
-      font-family: 'Playfair Display', serif;
-      font-weight: 600;
-    }
-
-    h2 {
-      font-size: 2.5rem;
-      margin-bottom: 1rem;
-      position: relative;
-      display: inline-block;
-      color: var(--deep-purple);
-    }
-    h2:after {
-      content: '';
-      position: absolute;
-      bottom: -12px;
-      left: 0;
-      width: 70px;
-      height: 3px;
-      background: var(--gold);
-      border-radius: 2px;
-    }
-
-    .section {
-      padding: 90px 5%;
-      max-width: 1300px;
-      margin: 0 auto;
-    }
-
-    /* navbar premium */
-    .navbar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1rem 5%;
-      background: rgba(255, 255, 255, 0.96);
-      backdrop-filter: blur(6px);
-      box-shadow: var(--shadow-sm);
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      transition: all 0.3s ease;
-    }
-    .logo a {
-      font-size: 1.7rem;
-      font-weight: 700;
-      color: var(--deep-purple);
-      text-decoration: none;
-      letter-spacing: -0.5px;
-      background: linear-gradient(135deg, var(--deep-purple) 30%, var(--gold) 80%);
-      background-clip: text;
-      -webkit-background-clip: text;
-      color: transparent;
-    }
-    .nav-links {
-      display: flex;
-      gap: 2.5rem;
-      list-style: none;
-    }
-    .nav-links a {
-      text-decoration: none;
-      font-weight: 500;
-      color: var(--deep-purple);
-      transition: 0.2s;
-      font-size: 1rem;
-      position: relative;
-    }
-    .nav-links a:hover {
-      color: var(--gold);
-    }
-    .nav-links a:after {
-      content: '';
-      position: absolute;
-      bottom: -6px;
-      left: 0;
-      width: 0%;
-      height: 2px;
-      background: var(--gold);
-      transition: 0.2s;
-    }
-    .nav-links a:hover:after {
-      width: 100%;
-    }
-
-    /* mobile menu button */
-    .menu-btn {
-      display: none;
-      font-size: 1.8rem;
-      color: var(--deep-purple);
-      background: none;
-      border: none;
-      cursor: pointer;
-      transition: 0.2s;
-    }
-    .menu-btn:hover {
-      color: var(--gold);
-    }
-
-    /* hero section */
-    .hero {
-      background: linear-gradient(rgba(46, 26, 74, 0.75), rgba(46, 26, 74, 0.85)), 
-                  url('https://images.unsplash.com/photo-1507842217343-583bb7270b66?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80') center/cover no-repeat;
-      padding: 120px 5% 100px;
-      text-align: center;
-      position: relative;
-    }
-    .hero-content h1,
-    .hero-content p {
-      color: white;
-      text-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    }
-
-    .hero-content .gold-text {
-      color: var(--gold);
-    }
-    .hero-content p {
-      font-size: 1.2rem;
-      max-width: 700px;
-      margin: 1rem auto 0;
-    }
-    .hero-btn {
-      margin-top: 2rem;
-      display: inline-block;
-      background: var(--deep-purple);
-      color: white;
-      padding: 12px 28px;
-      border-radius: 40px;
-      text-decoration: none;
-      font-weight: 500;
-      transition: 0.3s;
-      border: 1px solid transparent;
-      box-shadow: 0 5px 15px rgba(46, 26, 74, 0.2);
-    }
-    .hero-btn:hover {
-      background: var(--gold);
-      color: var(--deep-purple);
-      border-color: var(--gold);
-      transform: translateY(-3px);
-      box-shadow: var(--glow-gold);
-    }
-
-    /* books grid */
-    .books-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 3rem;
-      margin-top: 3rem;
-    }
-    .book-card {
-      background: var(--white);
-      border-radius: 28px;
-      overflow: hidden;
-      transition: all 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
-      box-shadow: var(--shadow-sm);
-      border: 1px solid rgba(212, 175, 55, 0.2);
-    }
-    .book-card:hover {
-      transform: translateY(-12px);
-      box-shadow: 0 25px 40px rgba(46, 26, 74, 0.12), 0 0 0 1px rgba(212, 175, 55, 0.3);
-    }
-    .book-img {
-      background: linear-gradient(145deg, #F4EFE6, #E9E0D3);
-      height: 440px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 5rem;
-      color: var(--deep-purple);
-      border-bottom: 2px solid var(--gold);
-    }
-    .book-info {
-      padding: 1.8rem;
-    }
-    .book-title {
-      font-size: 1.7rem;
-      font-weight: 700;
-      font-family: 'Playfair Display', serif;
-      color: var(--deep-purple);
-      margin-bottom: 0.5rem;
-    }
-    .book-desc {
-      color: #4F3E6E;
-      line-height: 1.5;
-      margin: 0.8rem 0 1.2rem;
-      font-size: 0.95rem;
-    }
-    .price-wrap {
-      display: flex;
-      align-items: baseline;
-      gap: 12px;
-      margin-bottom: 1.5rem;
-      flex-wrap: wrap;
-    }
-    .old-price {
-      text-decoration: line-through;
-      color: #9B8AAE;
-      font-size: 1rem;
-    }
-    .new-price {
-      font-size: 1.8rem;
-      font-weight: 700;
-      color: var(--deep-purple);
-    }
-    .discount-badge {
-      background: var(--gold);
-      padding: 4px 12px;
-      border-radius: 30px;
-      font-size: 0.75rem;
-      font-weight: 600;
-      color: var(--deep-purple);
-    }
-    .buy-btn {
-      background: var(--deep-purple);
-      color: white;
-      padding: 12px 24px;
-      border-radius: 40px;
-      text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      font-weight: 600;
-      transition: 0.25s;
-      border: none;
-      cursor: pointer;
-      font-size: 0.95rem;
-    }
-    .buy-btn i {
-      transition: transform 0.2s;
-    }
-    .buy-btn:hover {
-      background: var(--gold);
-      color: var(--deep-purple);
-      box-shadow: var(--glow-gold);
-      transform: scale(1.02);
-    }
-    .buy-btn:hover i {
-      transform: translateX(5px);
-    }
-
-    /* about section */
-    .about {
-      background: var(--light-gray);
-      border-radius: 48px;
-      margin: 20px 5% 60px;
-      padding: 60px 40px;
-      box-shadow: inset 0 0 0 1px rgba(212, 175, 55, 0.2), var(--shadow-sm);
-    }
-    .about-container {
-      display: flex;
-      gap: 3rem;
-      align-items: center;
-      flex-wrap: wrap;
-    }
-    .about-img img {
-      width: 120px;
-      height: 120px;
-      border-radius: 50%;
-      object-fit: cover;
-      margin-bottom: 20px;
-      border: 3px solid #d4af37;
-    }
-    .about-img img:hover{
-      box-shadow: 0 12px 28px rgba(212, 175, 55, 0.9);
-      background: linear-gradient(135deg, #d4af37, #d1b148);    }
-    
-
-    .about-img i {
-      font-size: 9rem;
-      color: var(--deep-purple);
-      background: white;
-      padding: 1.5rem;
-      border-radius: 50%;
-      box-shadow: 0 20px 30px rgba(0,0,0,0.05);
-      border: 2px solid var(--gold);
-    }
-    .about-text {
-      flex: 2;
-    }
-    .about-text h2:after {
-      left: 0;
-      width: 60px;
-    }
-    .author-name {
-      font-size: 1.6rem;
-      font-weight: 600;
-      color: var(--gold);
-      margin: 0.5rem 0 1rem;
-    }
-    .signature {
-      margin-top: 1.5rem;
-      font-style: italic;
-      border-left: 3px solid var(--gold);
-      padding-left: 1rem;
-      color: #4A3B5E;
-    }
-
-    /* footer */
-    .footer {
-      background: var(--deep-purple);
-      color: #E5D9F2;
-      padding: 3rem 5% 2rem;
-      margin-top: 3rem;
-    }
-    .footer-content {
-      display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 2rem;
-      max-width: 1300px;
-      margin: 0 auto;
-    }
-    .footer-col h3 {
-      font-family: 'Playfair Display';
-      color: var(--gold);
-      margin-bottom: 1rem;
-    }
-    .footer-col p, .footer-col a {
-      color: #ddd2f0;
-      text-decoration: none;
-      transition: 0.2s;
-    }
-    .footer-col a:hover {
-      color: var(--gold);
-    }
-    .social-links i {
-      font-size: 1.4rem;
-      margin-right: 1rem;
-      transition: 0.2s;
-    }
-    .copyright {
-      text-align: center;
-      padding-top: 2rem;
-      margin-top: 2rem;
-      border-top: 1px solid rgba(212, 175, 55, 0.3);
-      font-size: 0.85rem;
-    }
-
-    /* animations */
-    @keyframes fadeUp {
-      from {
-        opacity: 0;
-        transform: translateY(20px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    .book-card, .about-container {
-      animation: fadeUp 0.5s ease forwards;
-    }
-
-    /* responsive media queries */
-    @media (max-width: 992px) {
-      h2 { font-size: 2rem; }
-      .hero-content h1 { font-size: 2.8rem; }
-      .books-grid { gap: 2rem; }
-      .about-container { flex-direction: column; text-align: center; }
-      .about-text h2:after { left: 50%; transform: translateX(-50%); width: 70px; }
-    }
-
-    @media (max-width: 768px) {
-      .navbar { padding: 0.8rem 5%; }
-      .nav-links {
-        position: fixed;
-        top: 70px;
-        left: -100%;
-        background: rgba(255, 255, 255, 0.98);
-        backdrop-filter: blur(12px);
-        width: 80%;
-        height: auto;
-        flex-direction: column;
-        align-items: center;
-        gap: 1.8rem;
-        padding: 2rem 1rem;
-        border-radius: 28px;
-        box-shadow: 0 20px 30px rgba(0,0,0,0.1);
-        transition: 0.3s ease-in-out;
-        z-index: 999;
-        border: 1px solid rgba(212, 175, 55, 0.4);
-      }
-      .nav-links.active {
-        left: 10%;
-        right: 10%;
-        width: auto;
-      }
-      .menu-btn {
-        display: block;
-      }
-      .hero-content h1 { font-size: 2.2rem; }
-      .section { padding: 60px 5%; }
-      .about { margin: 20px 4% 40px; padding: 40px 20px; }
-      .book-title { font-size: 1.4rem; }
-      .hero {
-        padding: 100px 5% 80px;
-      }
-    }
-
-    @media (max-width: 480px) {
-      .hero-content h1 { font-size: 1.9rem; }
-      .hero-content p { font-size: 1rem; }
-      .books-grid { grid-template-columns: 1fr; }
-      .book-img { height: 400px; font-size: 3.8rem; }
-      .new-price { font-size: 1.5rem; }
-      .footer-content { flex-direction: column; text-align: center; }
-      .social-links { justify-content: center; display: flex; gap: 1rem; }
-      .section { padding: 50px 4%; }
-      .hero {
-        padding: 80px 5% 60px;
-      }
-    }
-
-    @media (max-width: 400px) {
-      .logo a { font-size: 1.3rem; }
-      .hero { padding: 70px 5% 60px; }
-      .buy-btn { padding: 10px 20px; font-size: 0.85rem; }
-      .book-info { padding: 1.2rem; }
-    }
-
-    /* glowing effect for buttons and selected elements */
-    .glow-on-hover {
-      transition: 0.2s;
-    }
-    .book-img img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;      /* Ensures the image fills the area without distortion */
-      display: block;
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Queen Esther Yakubu | Official Bookstore</title>
+<meta name="description" content="The official bookstore of author Queen Esther Yakubu. DreamCode (eBook) and Dauda and the Spirit World (hard copy), both 50% off for a limited time.">
+<link rel="canonical" href="https://queenestherbooks.com/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Queen Esther Books">
+<meta property="og:title" content="Queen Esther Books | Inspiring minds. Transforming lives.">
+<meta property="og:description" content="Books by Queen Esther Yakubu: DreamCode and Dauda and the Spirit World. Christmas Season promo, 50% off.">
+<meta property="og:url" content="https://queenestherbooks.com/">
+<meta property="og:image" content="https://queenestherbooks.com/images/og-index.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Queen Esther Books, Inspiring minds. Transforming lives.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Queen Esther Books | Inspiring minds. Transforming lives.">
+<meta name="twitter:description" content="Books by Queen Esther Yakubu. Christmas Season promo, 50% off.">
+<meta name="twitter:image" content="https://queenestherbooks.com/images/og-index.jpg">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%232E1A4A'/%3E%3Ctext x='50' y='68' font-size='58' text-anchor='middle' fill='%23D4AF37' font-family='Arial'%3E📖%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--p:#2E1A4A;--g:#D4AF37;--gd:#8a6508;--lg:#F9F7F5;--sh:0 12px 30px rgba(0,0,0,.05);--glow:0 0 8px rgba(212,175,55,.5),0 0 15px rgba(212,175,55,.3)}
+body{font-family:'Montserrat',sans-serif;background:#fff;color:#1E1A2F;scroll-behavior:smooth;overflow-x:hidden}
+a:focus-visible,button:focus-visible{outline:3px solid var(--g);outline-offset:3px}
+h1,h2,h3,.logo{font-family:'Playfair Display',serif;font-weight:600}
+h2{font-size:2.5rem;margin-bottom:1rem;position:relative;display:inline-block;color:var(--p)}
+h2:after{content:'';position:absolute;bottom:-12px;left:0;width:70px;height:3px;background:var(--g);border-radius:2px}
+.section{padding:90px 5%;max-width:1300px;margin:0 auto}
+.navbar{display:flex;justify-content:space-between;align-items:center;padding:1rem 5%;background:rgba(255,255,255,.96);backdrop-filter:blur(6px);box-shadow:var(--sh);position:sticky;top:0;z-index:1000}
+.logo a{font-size:1.7rem;font-weight:700;text-decoration:none;color:var(--p)}
+.logo a span{color:var(--gd)}
+.nav-links{display:flex;gap:2.5rem;list-style:none}
+.nav-links a{text-decoration:none;font-weight:500;color:var(--p);position:relative}
+.nav-links a:hover{color:var(--gd)}
+.nav-links a:after{content:'';position:absolute;bottom:-6px;left:0;width:0;height:2px;background:var(--g);transition:.2s}
+.nav-links a:hover:after{width:100%}
+.menu-btn{display:none;font-size:1.8rem;color:var(--p);background:none;border:none;cursor:pointer}
+.hero{background:linear-gradient(rgba(46,26,74,.75),rgba(46,26,74,.85)),#2E1A4A url('https://images.unsplash.com/photo-1507842217343-583bb7270b66?auto=format&fit=crop&w=1600&q=70') center/cover no-repeat;padding:120px 5% 100px;text-align:center;color:#fff}
+.hero h1{font-size:3.4rem;color:var(--g);text-shadow:0 2px 5px rgba(0,0,0,.2)}
+.hero p{font-size:1.2rem;max-width:700px;margin:1rem auto 0}
+.promo{display:inline-block;margin-top:1.4rem;background:rgba(212,175,55,.18);border:1px solid var(--g);color:#F3E5AB;padding:8px 20px;border-radius:40px;font-size:.9rem;font-weight:600}
+.hero-btn{margin:2rem 0 0 0;display:inline-block;background:var(--g);color:var(--p);padding:12px 28px;border-radius:40px;text-decoration:none;font-weight:600;transition:.3s}
+.hero-btn:hover{transform:translateY(-3px);box-shadow:var(--glow)}
+.books-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:3rem;margin-top:3rem}
+.book-card{background:#fff;border-radius:28px;overflow:hidden;transition:.4s;box-shadow:var(--sh);border:1px solid rgba(212,175,55,.2)}
+.book-card:hover{transform:translateY(-12px);box-shadow:0 25px 40px rgba(46,26,74,.12),0 0 0 1px rgba(212,175,55,.3)}
+.book-img{background:linear-gradient(145deg,#F4EFE6,#E9E0D3);height:440px;display:flex;align-items:center;justify-content:center;border-bottom:2px solid var(--g)}
+.book-img img{max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain;display:block}
+.book-info{padding:1.8rem}
+.tag{display:inline-block;font-size:.7rem;font-weight:700;letter-spacing:1px;color:var(--gd);margin-bottom:.4rem}
+.book-title{font-size:1.7rem;font-weight:700;color:var(--p);margin-bottom:.5rem}
+.book-desc{color:#4F3E6E;line-height:1.5;margin:.8rem 0 1.2rem;font-size:.95rem}
+.price-wrap{display:flex;align-items:baseline;gap:12px;margin-bottom:1.5rem;flex-wrap:wrap}
+.old-price{text-decoration:line-through;color:#76669a}
+.new-price{font-size:1.8rem;font-weight:700;color:var(--p)}
+.discount-badge{background:var(--g);padding:4px 12px;border-radius:30px;font-size:.75rem;font-weight:600;color:var(--p)}
+.buy-btn{background:var(--p);color:#fff;padding:12px 24px;border-radius:40px;text-decoration:none;display:inline-flex;align-items:center;gap:8px;font-weight:600;transition:.25s}
+.buy-btn:hover{background:var(--g);color:var(--p);box-shadow:var(--glow)}
+.about{background:var(--lg);border-radius:48px;margin:20px 5% 60px;padding:60px 40px;box-shadow:inset 0 0 0 1px rgba(212,175,55,.2),var(--sh)}
+.about-container{display:flex;gap:3rem;align-items:center;flex-wrap:wrap}
+.about-img img{width:140px;height:140px;border-radius:50%;object-fit:cover;border:3px solid var(--g);transition:.2s}
+.about-img img:hover{box-shadow:0 12px 28px rgba(212,175,55,.7)}
+.about-text{flex:2}
+.author-name{font-size:1.6rem;font-weight:600;color:var(--gd);margin:.5rem 0 1rem}
+.about-text p+p{margin-top:.8rem}
+.signature{margin-top:1.5rem;font-style:italic;border-left:3px solid var(--g);padding-left:1rem;color:#4A3B5E}
+.footer{background:var(--p);color:#E5D9F2;padding:3rem 5% 2rem;margin-top:3rem}
+.footer-content{display:flex;justify-content:space-between;flex-wrap:wrap;gap:2rem;max-width:1300px;margin:0 auto}
+.footer-col h3{color:var(--g);margin-bottom:1rem}
+.footer-col a,.footer-col p{color:#ddd2f0;text-decoration:none}
+.footer-col a:hover{color:var(--g)}
+.copyright{text-align:center;padding-top:2rem;margin-top:2rem;border-top:1px solid rgba(212,175,55,.3);font-size:.85rem}
+.wa{position:fixed;right:max(18px,env(safe-area-inset-right));bottom:max(18px,env(safe-area-inset-bottom));z-index:900;width:58px;height:58px;border-radius:50%;background:#128c4a;color:#fff;font-size:1.9rem;display:grid;place-items:center;box-shadow:0 8px 22px rgba(0,0,0,.25);text-decoration:none}
+@media(max-width:992px){h2{font-size:2rem}.about-container{flex-direction:column;text-align:center}}
+@media(max-width:768px){
+.nav-links{position:fixed;top:70px;left:-100%;background:rgba(255,255,255,.98);width:80%;flex-direction:column;align-items:center;gap:1.8rem;padding:2rem 1rem;border-radius:28px;box-shadow:0 20px 30px rgba(0,0,0,.1);transition:.3s;z-index:999;border:1px solid rgba(212,175,55,.4)}
+.nav-links.active{left:10%;width:80%}
+.menu-btn{display:block}.hero h1{font-size:2.2rem}.section{padding:60px 5%}.about{margin:20px 4% 40px;padding:40px 20px}.hero{padding:100px 5% 80px}}
+@media(max-width:480px){.books-grid{grid-template-columns:1fr}.book-img{height:400px}.footer-content{flex-direction:column;text-align:center}.logo a{font-size:1.3rem}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
 </head>
 <body>
 
-<!-- PREMIUM NAVBAR -->
-<nav class="navbar">
-  <div class="logo">
-    <a href="#"> Queen Esther <span style="color:var(--gold);">Books</span></a>
-  </div>
-  <button class="menu-btn" id="mobileMenuBtn" aria-label="Menu">
-    <i class="fas fa-bars"></i>
-  </button>
+<nav class="navbar" aria-label="Main">
+  <div class="logo"><a href="#home">Queen Esther <span>Books</span></a></div>
+  <button class="menu-btn" id="mobileMenuBtn" aria-label="Menu" aria-expanded="false"><i class="fas fa-bars"></i></button>
   <ul class="nav-links" id="navLinks">
     <li><a href="#home">Home</a></li>
     <li><a href="#books">Books</a></li>
@@ -501,196 +99,95 @@
   </ul>
 </nav>
 
-<!-- HERO SECTION -->
 <section id="home" class="hero">
-  <div class="hero-content">
-    <h1> <span class="gold-text">Queen Esther Yakubu</span></h1>
-    <p>Unlock divine wisdom, decode your dreams, and step into transformation. Discover powerful books that bridge heaven and earth.</p>
-    <a href="#books" class="hero-btn">Explore Books <i class="fas fa-arrow-down"></i></a>
-  </div>
+  <h1>Queen Esther Yakubu</h1>
+  <p>Unlock divine wisdom, decode your dreams, and step into transformation. Discover powerful books that bridge heaven and earth.</p>
+  <div class="promo" id="promoBanner">🎄 Christmas Season Promo: 50% off both books</div><br>
+  <a href="#books" class="hero-btn">Explore Books <i class="fas fa-arrow-down"></i></a>
 </section>
 
-<!-- BOOKS SECTION (all listed books) -->
 <section id="books" class="section">
   <h2>✦ Sacred Collection ✦</h2>
   <div class="books-grid">
-    
-    <!-- BOOK 1: DreamCode -->
+
     <div class="book-card">
-      <div class="book-img">
-        <img src="Dream Code Front.jpg">
-      </div>
+      <div class="book-img"><img src="images/dream-code-front.jpg" width="900" height="1277" alt="DreamCode: How to Handle Your Dreams and Change Your Life, book cover" loading="lazy"></div>
       <div class="book-info">
+        <span class="tag">EBOOK • PDF</span>
         <h3 class="book-title">DreamCode</h3>
-        <p class="book-desc">How to Handle Your Dreams & Change Your Life — Dreams are messages; they warn, guide, reveal, and predict. Learn to decode symbols, understand timing cycles, and turn dream insights into real-life transformation.</p>
-        <div class="price-wrap">
-          <span class="old-price">₦7,000</span>
-          <span class="new-price">₦1,000</span>
-          <span class="discount-badge">85% OFF • Launch Special</span>
-        </div>
-        <a href="dreamcode.html" class="buy-btn" target="_blank" id="dreamcodeBuyBtn">Buy on Selar <i class="fas fa-arrow-right"></i></a>
+        <p class="book-desc">How to Handle Your Dreams &amp; Change Your Life. Dreams warn, guide, reveal and predict. Learn to decode symbols, understand timing cycles, and turn dream insights into real-life transformation.</p>
+        <div class="price-wrap" data-reg="4000"><span class="new-price">₦4,000</span></div>
+        <a href="dreamcode.html" class="buy-btn">View DreamCode <i class="fas fa-arrow-right"></i></a>
       </div>
     </div>
 
-    <!-- BOOK 2: DAUDA AND THE SPIRIT WORLD  -->
     <div class="book-card">
-      <div class="book-img">
-        <img src="DAUDA AND THE SPIRIT WORLD .png">
-      </div>
+      <div class="book-img"><img src="images/dauda-and-the-spirit-world.png" width="795" height="589" alt="Dauda and The Spirit World: The Snake Tribe Prince, book cover" loading="lazy"></div>
       <div class="book-info">
-        <h3 class="book-title">DAUDA AND THE SPIRIT WORLD </h3>
-        <p class="book-desc">Coming soon Pre-order now for exclusive bonuses.</p>
-        <div class="price-wrap">
-          <span class="new-price">₦1,000</span>
-          <span class="discount-badge">75% OFF • Launch Special</span>
-        </div>
-        <a href="Dauda and the Spirit World.html" class="buy-btn" target="_blank" id="whispersBuyBtn">Buy on Selar <i class="fas fa-arrow-right"></i></a>
+        <span class="tag">HARD COPY • AGES 8–16</span>
+        <h3 class="book-title">Dauda and the Spirit World</h3>
+        <p class="book-desc">The Snake Tribe Prince. A boy who sees the unseen faces a dangerous prince and a divine mission. Order on WhatsApp, with Abuja pickup.</p>
+        <div class="price-wrap" data-reg="12000"><span class="new-price">₦12,000</span></div>
+        <a href="dauda-and-the-spirit-world.html" class="buy-btn">View &amp; Order <i class="fas fa-arrow-right"></i></a>
       </div>
     </div>
   </div>
-  <p style="text-align:center; margin-top: 2rem; font-size:0.85rem; color:var(--deep-purple);"><i class="fas fa-star" style="color:var(--gold);"></i> More titles releasing soon — stay tuned <i class="fas fa-star" style="color:var(--gold);"></i></p>
+  <p style="text-align:center;margin-top:2rem;font-size:.9rem;color:var(--p)"><i class="fas fa-star" style="color:var(--g)"></i> More titles releasing soon. Stay tuned <i class="fas fa-star" style="color:var(--g)"></i></p>
 </section>
 
-<!-- ABOUT THE AUTHOR SECTION -->
 <section id="about" class="section about">
   <div class="about-container">
-    <div class="about-img">
-      <img src="Esther-Yakubu.png">
-    </div>
+    <div class="about-img"><img src="images/esther-yakubu.png" width="140" height="140" alt="Queen Esther Yakubu" loading="lazy"></div>
     <div class="about-text">
       <h2>About the Author</h2>
       <div class="author-name">Esther Yakubu (Queen Esther Yakubu)</div>
-      <p>Esther is a prophetic voice, spiritual leader and bestselling author dedicated to helping believers unlock the supernatural realm through dreams and divine wisdom. With years of experience in dream analysis and spiritual coaching, she guides thousands worldwide to embrace purpose. Her teachings bridge ancient biblical insights with modern life application.</p>
-      <p>Founder of queenestherbooks.com, Esther speaks at conferences, leads dream workshops, and writes with passion to ignite transformation. Her book <strong>DreamCode</strong> is the first in a series designed to revolutionize how you view your nights.</p>
-      <div class="signature">"Every dream is a doorway — let’s walk through together." <br> — Queen Esther Yakubu</div>
+      <p>Esther is a prophetic voice and author dedicated to helping believers understand dreams and walk in divine wisdom. Her teaching bridges biblical insight with everyday life.</p>
+      <p>Her book <strong>DreamCode</strong> helps readers decode their dreams, and <strong>Dauda and the Spirit World</strong> brings spiritual truths to a younger audience through story.</p>
+      <div class="signature">"Every dream is a doorway. Let's walk through together."<br>— Queen Esther Yakubu</div>
     </div>
   </div>
 </section>
 
-<!-- FOOTER -->
 <footer class="footer">
   <div class="footer-content">
-    <div class="footer-col">
-      <h3>Queen Esther Books</h3>
-      <p>Inspiring minds, revealing mysteries.</p>
-      <div class="social-links" style="margin-top: 10px;">
-        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-        <a href="#" aria-label="X"><i class="fab fa-twitter"></i></a>
-      </div>
-    </div>
-    <div class="footer-col">
-      <h3>Quick Links</h3>
-      <p><a href="#home">Home</a></p>
-      <p><a href="#books">Books</a></p>
-      <p><a href="#about">About Esther</a></p>
-    </div>
-    <div class="footer-col">
-      <h3>Contact</h3>
-      <p><i class="fas fa-envelope"></i> hello@queenestherbooks.com</p>
-      <p><i class="fas fa-globe"></i> queenestherbooks.com</p>
-    </div>
+    <div class="footer-col"><h3>Queen Esther Books</h3><p>Inspiring minds. Transforming lives.</p></div>
+    <div class="footer-col"><h3>Quick Links</h3><p><a href="#home">Home</a></p><p><a href="#books">Books</a></p><p><a href="#about">About Esther</a></p></div>
+    <div class="footer-col"><h3>Contact</h3>
+      <p><a href="mailto:hello@queenestherbooks.com"><i class="fas fa-envelope"></i> hello@queenestherbooks.com</a></p>
+      <p><a class="wa-link" href="#" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp"></i> Chat on WhatsApp</a></p>
+      <p><i class="fas fa-globe"></i> queenestherbooks.com</p></div>
   </div>
-  <div class="copyright">
-    <p>© 2026 Queen Esther Yakubu — All glory to the King. | Designed with <i class="fas fa-heart" style="color:var(--gold);"></i> for dreamers</p>
-  </div>
+  <div class="copyright"><p>© 2026 Queen Esther Yakubu. All glory to the King.</p></div>
 </footer>
 
+<a href="#" class="wa-link wa" aria-label="Chat on WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+
 <script>
-  (function() {
-    // Mobile menu toggle
-    const menuBtn = document.getElementById('mobileMenuBtn');
-    const navLinks = document.getElementById('navLinks');
-    if (menuBtn && navLinks) {
-      menuBtn.addEventListener('click', (e) => {
-        e.stopPropagation();
-        navLinks.classList.toggle('active');
-        // change icon
-        const icon = menuBtn.querySelector('i');
-        if (navLinks.classList.contains('active')) {
-          icon.classList.remove('fa-bars');
-          icon.classList.add('fa-times');
-        } else {
-          icon.classList.remove('fa-times');
-          icon.classList.add('fa-bars');
-        }
-      });
-      // close mobile menu when clicking a link
-      const links = navLinks.querySelectorAll('a');
-      links.forEach(link => {
-        link.addEventListener('click', () => {
-          navLinks.classList.remove('active');
-          const icon = menuBtn.querySelector('i');
-          if (icon) {
-            icon.classList.remove('fa-times');
-            icon.classList.add('fa-bars');
-          }
-        });
-      });
-    }
-
-    // Close mobile menu if clicked outside (optional, improves UX)
-    document.addEventListener('click', function(event) {
-      if (navLinks && navLinks.classList.contains('active')) {
-        if (!navLinks.contains(event.target) && !menuBtn.contains(event.target)) {
-          navLinks.classList.remove('active');
-          const icon = menuBtn.querySelector('i');
-          if (icon) {
-            icon.classList.remove('fa-times');
-            icon.classList.add('fa-bars');
-          }
-        }
-      }
+(function(){
+  var S=new Date('2026-11-16T00:00:00+01:00'),E=new Date('2026-12-27T23:59:59+01:00');
+  var f=function(v){return '₦'+v.toLocaleString('en-NG')};
+  var wa='https://wa.me/2349036913002?text='+encodeURIComponent('Hello, I found you on queenestherbooks.com and I have a question.');
+  document.querySelectorAll('.wa-link').forEach(function(a){a.href=wa;a.target='_blank';a.rel='noopener noreferrer'});
+  function render(){
+    var n=new Date(),on=n>=S&&n<=E;
+    document.querySelectorAll('[data-reg]').forEach(function(b){
+      var r=+b.dataset.reg;
+      b.innerHTML=on?'<span class="old-price">'+f(r)+'</span><span class="new-price">'+f(r/2)+'</span><span class="discount-badge">50% OFF • Christmas Season Promo</span>'
+        :'<span class="new-price">'+f(r)+'</span>'+(n<S?'<span class="discount-badge">50% OFF starts Nov 16</span>':'');
     });
-
-    // Buy button links: Replace these with actual Selar product URLs when available
-    const dreamBtn = document.getElementById('dreamcodeBuyBtn');
-    if (dreamBtn) {
-      // Replace with actual Selar link for DreamCode
-      dreamBtn.setAttribute('href', 'dreamcode.html'); 
-      dreamBtn.addEventListener('click', (e) => {
-        if (dreamBtn.getAttribute('href') === '#' || dreamBtn.getAttribute('href') === 'dreamcode.html') {
-          console.log('Please replace with actual Selar URL for DreamCode');
-        }
-      });
-    }
-    
-    const whispersBtn = document.getElementById('whispersBuyBtn');
-    if (whispersBtn) {
-      whispersBtn.setAttribute('href', 'Dauda and the Spirit World.html');
-      whispersBtn.addEventListener('click', (e) => {
-        if (whispersBtn.getAttribute('href') === '#') {
-          console.log('Update second book link with actual Selar product');
-        }
-      });
-    }
-    
-    // Scroll active link highlight
-    const sections = document.querySelectorAll('section[id]');
-    function updateActiveLink() {
-      let scrollPos = window.scrollY + 120;
-      sections.forEach(section => {
-        const top = section.offsetTop;
-        const bottom = top + section.offsetHeight;
-        if (scrollPos >= top && scrollPos < bottom) {
-          const id = section.getAttribute('id');
-          const navLink = document.querySelector(`.nav-links a[href="#${id}"]`);
-          if (navLink) {
-            document.querySelectorAll('.nav-links a').forEach(link => link.style.color = '');
-            navLink.style.color = 'var(--gold)';
-          }
-        } else {
-          const id = section.getAttribute('id');
-          const navLink = document.querySelector(`.nav-links a[href="#${id}"]`);
-          if (navLink && !document.querySelector(`.nav-links a[href="#${window.location.hash.replace('#','')}"]`)) {
-            navLink.style.color = '';
-          }
-        }
-      });
-    }
-    window.addEventListener('scroll', updateActiveLink);
-    updateActiveLink();
-  })();
+    document.getElementById('promoBanner').hidden=n>E;
+    if(n<S)document.getElementById('promoBanner').textContent='🎄 Christmas Season Promo starts Nov 16: 50% off both books';
+  }
+  render();setInterval(render,60000);
+  var btn=document.getElementById('mobileMenuBtn'),nav=document.getElementById('navLinks');
+  function setMenu(o){nav.classList.toggle('active',o);btn.setAttribute('aria-expanded',o);btn.firstElementChild.className=o?'fas fa-times':'fas fa-bars'}
+  btn.addEventListener('click',function(e){e.stopPropagation();setMenu(!nav.classList.contains('active'))});
+  nav.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){setMenu(false)})});
+  document.addEventListener('click',function(e){if(!nav.contains(e.target)&&!btn.contains(e.target))setMenu(false)});
+  var secs=document.querySelectorAll('section[id]');
+  function active(){var y=scrollY+120;secs.forEach(function(s){var l=document.querySelector('.nav-links a[href="#'+s.id+'"]');if(l)l.style.color=(y>=s.offsetTop&&y<s.offsetTop+s.offsetHeight)?'var(--gd)':''})}
+  addEventListener('scroll',active,{passive:true});active();
+})();
 </script>
 </body>
 </html>
